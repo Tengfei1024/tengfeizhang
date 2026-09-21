@@ -20,9 +20,10 @@
         <p class="lead">副教授 · 海南大学外国语学院</p>
         <p class="intro">研究聚焦日本外交与安全政策、国际舆论与公共场域，并使用社会网络分析与主题建模等方法开展跨学科研究。</p>
         <div class="actions">
-          <span class="button primary email-static"><span class="email-text js-email"></span></span>
+          <a class="button primary" id="email-button" href="#">邮箱</a>
           <a class="button" href="#publications">代表性论文</a>
           <a class="button" href="#projects">科研项目</a>
+          <a class="button" href="#supervision">学生指导</a>
         </div>
       </div>
       <aside class="profile-card">
@@ -77,7 +78,7 @@
         <h2>工作经历 <span>Appointments</span></h2>
         <div class="timeline">
           <article><time>2025.02–至今</time><h3>海南大学外国语学院</h3><p>副教授</p></article>
-          <article><time>2021.09–至今</time><h3>武汉大学经济外交研究中心</h3><p>青年研究员、研究员</p></article>
+          <article><time>2021.09–至今</time><h3>武汉大学经济外交研究中心</h3><p>研究员</p></article>
           <article><time>2021.07–2024.06</time><h3>武汉大学政治与公共管理学院</h3><p>讲师</p></article>
           <article><time>2019.04–2021.03</time><h3>驹泽大学全球媒体研究学部（日本）</h3><p>助教</p></article>
         </div>
@@ -143,9 +144,9 @@
         <div class="supervision-card">
           <h3>研究生在籍情况（2026年9月）</h3>
           <ul class="student-counts">
-            <li><span>研二</span><strong>薛雨凡、许洋</strong></li>
-            <li><span>研一</span><strong>蔡陈晨、罗金城</strong></li>
-            <li><span>本硕贯通</span><strong>胡嘉昀</strong></li>
+            <li><span>研二</span><strong>2人</strong></li>
+            <li><span>研一</span><strong>2人</strong></li>
+            <li><span>本硕贯通</span><strong>1人</strong></li>
           </ul>
         </div>
 
@@ -172,12 +173,19 @@
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Assemble the email at runtime to prevent automatic email-obfuscation
-    // services from rewriting it in the downloaded HTML file.
+    // Assemble the email at runtime to avoid automatic email-obfuscation rewriting.
     const emailAddress = ['z-t-f', 'live.cn'].join('@');
+
+    // Show the email address wherever needed on the page.
     document.querySelectorAll('.js-email').forEach(function (el) {
       el.textContent = emailAddress;
     });
+
+    // Make the top "邮箱" button open the visitor's mail client.
+    const emailButton = document.getElementById('email-button');
+    if (emailButton) {
+      emailButton.href = 'mailto:' + emailAddress;
+    }
   </script>
 
 <script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"7939e04a4baf43c8b86a560f74aac60e","spa":2}' crossorigin="anonymous"></script>
